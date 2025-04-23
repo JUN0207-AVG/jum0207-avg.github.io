@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Teachable Machine Tabs Example</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+      }
+      .navbar {
+        background-color: #333;
+        overflow: hidden;
+      }
+      .navbar a {
+        float: left;
+        color: white;
+        text-align: center;
+        padding: 14px 20px;
+        text-decoration: none;
+        cursor: pointer;
+      }
+      .navbar a:hover {
+        background-color: #575757;
+      }
+      .tab-content {
+        display: none;
+        padding: 20px;
+      }
+      .active {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 導覽列 -->
+    <div class="navbar">
+      <a onclick="showTab('home')">首頁</a>
+      <a onclick="showTab('ai')">AI 辨識</a>
+    </div>
+
+    <!-- 分頁內容 -->
+    <div id="home" class="tab-content active">
+      <h1>歡迎來到首頁</h1>
+      <p>這裡可以放介紹內容。</p>
+    </div>
+
+    <div id="ai" class="tab-content">
+      <h1>AI辨識結果：</h1>
+      <div id="label">尚未開始</div>
+      <button onclick="init()">開始辨識</button>
+    </div>
+
+    <!-- 引入 Teachable Machine -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ml5/0.6.0/ml5.min.js"></script>
+    <script src="script.js"></script>
+
+    <script>
+      // 分頁切換函數
+      function showTab(tabId) {
+        const tabs = document.getElementsByClassName("tab-content");
+        for (let tab of tabs) {
+          tab.classList.remove("active");
+        }
+        document.getElementById(tabId).classList.add("active");
+      }
+    </script>
+  </body>
+</html>
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>個人自我介紹</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <!-- Navigation bar and links removed -->
+
+  <div class="container">
+    <div class="profile-card">
+      <div class="profile-image">
+        <img id="profile-pic" src="attached_assets/S__85704738.jpg" alt="個人照片">
+      </div>
+      <div class="profile-info">
+        <h1>林俞君</h1>
+        <p class="title">台科大企管系三年級</p>
+        <div class="description">
+          <h2>關於我</h2>
+          <p>個性謹慎、誠實負責，喜歡音樂、策略型遊戲，享受透過推理來解開謎底的過程。</p>
+          <li>教育背景</li>
+          <p>以第一名的成績畢業於新民高中商業經營科，在台灣科技大學保持GPA3.74以上的成績。</p>
+          <li>專業技能</li>
+          <p>熟悉鼎新ERP以及文書系統並擁有會計資訊-乙級證照。大學期間，在會計相關科目展現了優秀的成績，並且目前正在修習中級會計學。</p>
+          <li>社團經驗</li>
+          <p>大學時期參加國際志工社，在社團中擔任財務的角色，負責管理社團的資金，包括預算編列、經費核銷。</p>
+          <li>未來規劃</li>
+          <p>未來計畫到台大修習更多會計課程像是審計學、稅務法規，以及加強英文並提升多益成績到750以上。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
+
