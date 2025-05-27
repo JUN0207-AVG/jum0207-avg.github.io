@@ -8,10 +8,11 @@
     body {
       font-family: Arial, sans-serif;
       margin: 0;
+      background-color: #FFDAB9; /* 淺橘色背景 */
     }
 
     .navbar {
-      background-color: #333;
+      background-color: #A0522D; /* 咖啡色背景 */
       overflow: hidden;
     }
 
@@ -75,27 +76,77 @@
       border: 1px solid #ccc;
       border-radius: 8px;
     }
+
+    .carousel {
+      position: relative;
+      max-width: 600px;
+      margin: auto;
+      overflow: hidden;
+    }
+
+    .carousel-slide {
+      display: none;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .carousel-slide img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .carousel-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(255, 255, 255, 0.5);
+      border: none;
+      cursor: pointer;
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    .prev {
+      left: 10px;
+    }
+
+    .next {
+      right: 10px;
+    }
   </style>
 </head>
 <body>
   <!-- 導覽列 -->
   <div class="navbar">
     <a onclick="showTab('home')">首頁</a>
-    <a onclick="showTab('ai')">AI 辨識</a>
     <a onclick="showTab('profile')">自我介紹</a>
     <a onclick="showTab('portfolio')">作品集</a>
   </div>
 
   <!-- 首頁 -->
-<div id="home" class="tab-content active">
-  <div class="container">
-    <div class="card">
-      <h1>歡迎來到我的網站</h1>
-      <p>請使用上方選單瀏覽各分頁內容！</p>
+  <div id="home" class="tab-content active">
+    <div class="container">
+      <div class="card">
+        <h1>歡迎來到我的網站</h1>
+        <p>請使用上方選單瀏覽各分頁內容！</p>
+
+        <!-- Carousel -->
+        <div class="carousel">
+          <div class="carousel-slide">
+            <img src="slide1.jpg" alt="Slide 1" />
+          </div>
+          <div class="carousel-slide">
+            <img src="slide2.jpg" alt="Slide 2" />
+          </div>
+          <div class="carousel-slide">
+            <img src="slide3.jpg" alt="Slide 3" />
+          </div>
+          <button class="carousel-button prev" onclick="changeSlide(-1)">&#10094;</button>
+          <button class="carousel-button next" onclick="changeSlide(1)">&#10095;</button>
+        </div>
+      </div>
     </div>
   </div>
-</div>
-
 
   <!-- 自我介紹 -->
   <div id="profile" class="tab-content">
@@ -132,12 +183,11 @@
   <div id="portfolio" class="tab-content">
     <h1>我的作品集</h1>
     <div class="portfolio-container">
-         <div class="card">
       <div class="portfolio-item">
         <img src="work1.jpg" alt="舞姿鑑定室">
         <p><a href="https://youtu.be/l21rS8NbMSE" target="_blank">連結</a></p>
       </div>
-       <div class="portfolio-item">
+      <div class="portfolio-item">
         <img src="投影片5.JPG" alt="作品1">
       </div>
       <div class="portfolio-item">
@@ -148,8 +198,6 @@
       </div>
     </div>
   </div>
-</div>
-
 
   <!-- Teachable Machine Script -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
@@ -165,6 +213,23 @@
       }
       document.getElementById(tabId).classList.add("active");
     }
+
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.carousel-slide');
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.style.display = (i === index) ? 'flex' : 'none';
+      });
+    }
+
+    function changeSlide(direction) {
+      currentSlide = (currentSlide + direction + slides.length) % slides.length;
+      showSlide(currentSlide);
+    }
+
+    // Initialize the carousel
+    showSlide(currentSlide);
   </script>
 </body>   
-</html> 
+</html>
