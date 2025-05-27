@@ -28,13 +28,12 @@
       background-color: #575757;
     }
 
-    /* 修正這裡：只顯示 active 的 tab-content */
     .tab-content {
       display: none;
       padding: 20px;
     }
 
-    .tab-content.active {
+    .active {
       display: block;
     }
 
@@ -124,7 +123,7 @@
     </div>
   </div>
 
-<!-- 作品集 -->
+  <!-- 作品集 -->
   <div id="portfolio" class="tab-content">
     <h1>我的作品集</h1>
     <div class="portfolio-container">
@@ -143,3 +142,28 @@
       </div>
     </div>
   </div>
+
+  <!-- AI 辨識 -->
+  <div id="ai" class="tab-content">
+    <h1>AI辨識結果：</h1>
+    <div id="label">尚未開始</div>
+    <button onclick="init()">開始辨識</button>
+  </div>
+
+  <!-- Teachable Machine Script -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ml5/0.6.0/ml5.min.js"></script>
+  <script src="script.js"></script>
+
+  <!-- 分頁切換功能 -->
+  <script>
+    function showTab(tabId) {
+      const tabs = document.getElementsByClassName("tab-content");
+      for (let tab of tabs) {
+        tab.classList.remove("active");
+      }
+      document.getElementById(tabId).classList.add("active");
+    }
+  </script>
+</body>   
+</html> 為甚麼自我介紹還是每一頁都有
