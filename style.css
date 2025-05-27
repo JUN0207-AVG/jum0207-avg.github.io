@@ -70,3 +70,12 @@ li {
   color: #e67e22; /* 更深的橘色 */
   margin: 10px 0;
 }
+
+/* 修正 tab-content 顯示 */
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
