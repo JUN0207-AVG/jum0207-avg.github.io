@@ -148,7 +148,7 @@
     </div>
   </div>
 
-  <!-- 自我介紹 -->
+<!-- 自我介紹 -->
   <div id="profile" class="tab-content">
     <div class="container">
       <div class="profile-card">
@@ -178,6 +178,38 @@
       </div>
     </div>
   </div>
+
+  <!-- 作品集 -->
+  <div id="portfolio" class="tab-content">
+    <h1>我的作品集</h1>
+    <div class="portfolio-container">
+      <div class="portfolio-item">
+        <img src="work1.jpg" alt="舞姿鑑定室">
+        <p><a href="https://example.com/work1" target="_blank">連結</a></p>
+      </div>
+       <div class="portfolio-item">
+        <img src="投影片5.JPG" alt="作品1">
+      </div>
+      <div class="portfolio-item">
+        <img src="投影片1.JPG" alt="作品2">
+      </div>
+      <div class="portfolio-item">
+        <img src="image (4).png" alt="作品3">
+      </div>
+    </div>
+  </div>
+
+  <!-- AI 辨識 -->
+  <div id="ai" class="tab-content">
+    <h1>AI辨識結果：</h1>
+    <div id="label">尚未開始</div>
+    <button onclick="init()">開始辨識</button>
+  </div>
+
+  <!-- Teachable Machine Script -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ml5/0.6.0/ml5.min.js"></script>
+  <script src="script.js"></script>
 
   <!-- 作品集 -->
   <div id="portfolio" class="tab-content">
