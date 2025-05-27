@@ -87,10 +87,15 @@
   </div>
 
   <!-- 首頁 -->
-  <div id="home" class="tab-content active">
-    <h1>歡迎來到我的網站</h1>
-    <p>請透過上方的導覽列瀏覽不同內容。</p>
+<div id="home" class="tab-content active">
+  <div class="container">
+    <div class="card">
+      <h1>歡迎來到我的網站</h1>
+      <p>請使用上方選單瀏覽各分頁內容！</p>
+    </div>
   </div>
+</div>
+
 
   <!-- 自我介紹 -->
   <div id="profile" class="tab-content">
@@ -127,6 +132,7 @@
   <div id="portfolio" class="tab-content">
     <h1>我的作品集</h1>
     <div class="portfolio-container">
+         <div class="card">
       <div class="portfolio-item">
         <img src="work1.jpg" alt="舞姿鑑定室">
         <p><a href="https://example.com/work1" target="_blank">連結</a></p>
@@ -142,13 +148,8 @@
       </div>
     </div>
   </div>
+</div>
 
-  <!-- AI 辨識 -->
-  <div id="ai" class="tab-content">
-    <h1>AI辨識結果：</h1>
-    <div id="label">尚未開始</div>
-    <button onclick="init()">開始辨識</button>
-  </div>
 
   <!-- Teachable Machine Script -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
